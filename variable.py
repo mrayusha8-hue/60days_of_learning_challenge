@@ -1,3 +1,4 @@
+#DAY2
 #variables using f-strings
 
 #string variavble
