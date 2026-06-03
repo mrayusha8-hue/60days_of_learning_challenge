@@ -1,4 +1,4 @@
-'''#Arithmetic operators
+#Arithmetic operators
 p=3
 q=2
 print(p+q)
@@ -22,7 +22,7 @@ print(f"x=x%2:{x}")
 x //= 2
 print(f"x=x//2:{x}")
 x **= 2
-print(f"x=x**2:{x}")'''
+print(f"x=x**2:{x}")
 
 #logical Operators
 x=True
