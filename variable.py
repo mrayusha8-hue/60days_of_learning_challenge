@@ -1,6 +1,6 @@
 #variables using f-strings
 
-#string variavble
+#string variable
 name="Timsha"
 print(f"My name is{name}")
 
