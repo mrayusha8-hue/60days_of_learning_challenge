@@ -1,3 +1,11 @@
+#----Save data using json----import json
+import os
+file_path = os.path.join(os.path.dirname(__file__), "students.json")
+def save_data():
+    with open(file_path, "w") as file:
+        json.dump(students, file, indent=4)
+    print("Data saved successfully!")
+    
 students = []   # list to store student records
 total_marks = 100
 
@@ -110,8 +118,33 @@ def search_student():
        found =  True
        break
     if found == False:
-     print("Student not found")
+        print("Student not found")
+     
+#----update_funtion-----
 
+def update_student():
+    name = input("Enter student name to update: ").lower()
+    for student in students:
+         if student["name"].lower() == name:
+            new_marks = int(input("Enter new marks: "))
+            student["marks"] = new_marks
+            student["percentage"] = (new_marks / total_marks) * 100
+            student["grade"] = calculate_grade(student["percentage"])
+            print("Student updated successfully!")
+            return
+    print("Student not found")
+    
+#----delete_student-----
+def delete_student():
+    name = input("Enter student name to delete: ").lower()
+    for student in students:
+        if student["name"].lower() == name:
+            students.remove(student)
+            print("Student deleted successfully!")
+            return
+    print("Student not found")
+   
+#----Save data using json----
 
 
 #-----MENU-----
@@ -122,9 +155,12 @@ while True:
     print("3. Search Student")
     print("4. Find Topper")
     print("5. Statistics")
-    print("6. Exit")
+    print("6. Update")
+    print("7. Delete")
+    print("8. Save")
+    print("9. Exit")
 
-    choice = input("\nEnter choice (1-6): ")
+    choice = input("\nEnter choice (1-9): ")
 
     if choice == "1":
         add_student()
@@ -137,6 +173,12 @@ while True:
     elif choice == "5":
       statistic_function()
     elif choice == "6":
+      update_student()
+    elif choice == "7":
+      delete_student()
+    elif choice == "8":
+      save_data()
+    elif choice == "9":
         print("Exited")
         break
     else:
