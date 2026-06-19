@@ -1,4 +1,5 @@
-#----Save data using json----import json
+#----Save data using json----
+import json
 import os
 file_path = os.path.join(os.path.dirname(__file__), "students.json")
 def save_data():
