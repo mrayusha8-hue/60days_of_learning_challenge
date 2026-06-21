@@ -1,8 +1,8 @@
 [
     {
         "name": "Sam",
-        "marks": 62,
-        "percentage": 62.0,
-        "grade": "B"
+        "marks": 51,
+        "percentage": 51.0,
+        "grade": "Fail"
     }
 ]
