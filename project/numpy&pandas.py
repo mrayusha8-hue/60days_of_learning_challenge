@@ -7,7 +7,7 @@
 • Cast it to float32 and verify the dtype changed.
 • Create a 3D array of shape (2, 3, 4) filled with zeros and check its dimensions.'''
 
-'''import numpy as np
+import numpy as np
 arr = np.arange(1,26).reshape(5,5)
 print(arr)
 print(f"The 3rd row: {arr[2]}")
@@ -18,7 +18,7 @@ print(f"Its dtype:{arr.dtype}, shape:{arr.shape}, dimension:{arr.ndim}")
 arr = arr.astype(float)
 print(arr.dtype)
 arr = np.zeros((2,3,4))
-print(arr.ndim)'''
+print(arr.ndim)
 
 '''Create a Pandas Series of 5 student scores with custom index labels (student names).
 • Access a score by name.
