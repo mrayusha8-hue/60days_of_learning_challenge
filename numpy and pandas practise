@@ -1,0 +1,7 @@
+'''Create a 5×5 NumPy array filled with integers 1–25.
+• Extract the 3rd row.
+• Extract the last 2 columns.
+• Get the element at row 2, column 4.
+• Slice the inner 3×3 block (rows 1–3, cols 1–3).'''
+
+import numpy as
