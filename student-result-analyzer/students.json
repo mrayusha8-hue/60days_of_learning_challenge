@@ -4,5 +4,17 @@
         "marks": 51,
         "percentage": 51.0,
         "grade": "Fail"
+    },
+    {
+        "name": "Ram",
+        "marks": 79,
+        "percentage": 79.0,
+        "grade": "B+"
+    },
+    {
+        "name": "Jerry",
+        "marks": 64,
+        "percentage": 64.0,
+        "grade": "B"
     }
 ]

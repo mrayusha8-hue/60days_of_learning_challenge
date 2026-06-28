@@ -10,6 +10,19 @@ def save_data():
 students = []   # list to store student records
 total_marks = 100
 
+#-----load_data or When program starts → checks students.json, if file exists → loads old students ,if not → creates empty list---- 
+
+def load_data():
+
+    global students
+
+    try:
+        with open(file_path, "r") as file:
+            students = json.load(file)
+
+    except FileNotFoundError:
+        students = []
+
 #-----calculate_grade function------
 def calculate_grade(percentage):
     if percentage >= 90:
@@ -144,11 +157,10 @@ def delete_student():
             print("Student deleted successfully!")
             return
     print("Student not found")
-   
-#----Save data using json----
 
 
 #-----MENU-----
+load_data()
 while True:
     print("\n===== Student Result Analyzer =====")
     print("1. Add Students")
