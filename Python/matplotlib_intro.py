@@ -73,7 +73,7 @@ x = np.array(["A", "B", "C", "D"])
 y = np.array([3, 8, 1, 5])
 
 plt.bar(x,y)
-plt.show()'''
+plt.show()
 
 #horizontal barchart
 
@@ -81,4 +81,51 @@ x = np.array(["A", "B", "C", "D"])
 y = np.array([3, 8, 1, 10])
 
 plt.bar(x, y, width = 0.5, color ='g')
+plt.show()
+
+
+#----HISTOGRAMS----(use hist() function to create histograms)
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.random.normal(160, 10, 150)
+
+plt.hist(x)
+plt.show()
+
+
+#PIE CHARTS(use pie() function)
+x = np.array([10, 20, 28, 15])
+mylabels = ["Pandas", "Numpy", "Python", "Matplotlib"]
+
+plt.pie(x, labels = mylabels)
+plt.show()
+
+x = np.array([10, 20, 28, 15])
+mylabels = ["Pandas", "Numpy", "Python", "Matplotlib"]
+
+plt.pie(x, labels = mylabels,startangle =  180)
+plt.show()'''
+
+#Pull the "Python" wedge 0.2 from the center of the pie:
+'''x = np.array([10, 20, 28, 15])
+mylabels = ["Pandas", "Numpy", "Python", "Matplotlib"]
+explodes = [0, 0, 0.2, 0]
+plt.pie(x, labels = mylabels,startangle =  180, explode = explodes)
+plt.show()'''
+
+'''x = np.array([10, 20, 28, 15])
+mylabels = ["Pandas", "Numpy", "Python", "Matplotlib"]
+explodes = [0, 0, 0.2, 0]
+color = ["w", "r", "b", "#4CAF50"]
+plt.pie(x, labels = mylabels,startangle =  180, explode = explodes, shadow = True, colors = color)
+
+plt.show()'''
+
+x = np.array([10, 20, 28, 15])
+mylabels = ["Pandas", "Numpy", "Python", "Matplotlib"]
+explodes = [0, 0, 0.2, 0]
+color = ["b", "r", "cyan", "#4CAF50"]
+plt.pie(x, labels = mylabels,startangle =  180, explode = explodes, shadow = True, colors = color)
+plt.legend(title = "Languages")
 plt.show()
