@@ -27,10 +27,49 @@ st.divider()
 
 # Dashboard Summary
 st.header("📊  Dashboard Summary")
-st.write("Key performance Indicators(KPIs) will be be displayed here")
-st.divider()
 
-st.caption("Personal Expense Tracker | Built using Python, Pandas and Streamlit")
+# Calculate KPI values
+total_expense = df["Amount"].sum()
+average_expense = df["Amount"].mean()
+highest_expense = df["Amount"].max()
+lowest_expense = df["Amount"].min()
+total_transactions = df.shape[0]  #len(df) can be used
+
+# Create 4 columns
+col1, col2, col3, col4, col5 = st.columns(5)
+
+# Adding KPI card within respective column
+with col1:
+    st.metric(
+        label = "💰 Total Expense",
+        value = f" ₹{total_expense:,.2f}"
+    )
+    
+    
+with col2:
+    st.metric(
+        label = "📊 Average Expense",
+        value = f" ₹{average_expense:,.2f}"
+    )
+
+with col3:
+    st.metric(
+        label = "💸 Highest Expense",
+        value = f" ₹{highest_expense:,.2f}"
+    )
+
+with col4:
+    st.metric(
+        label = "📉 Lowest Expense",
+        value = f" ₹{lowest_expense:,.2f}"
+)
+    
+with col5:
+    st.metric(
+        label = "🧾 Total Transactions",
+        value = total_transactions,
+        delta = "Total records"
+)
 st.divider()
 
 #Monthly Expense Section
@@ -57,3 +96,5 @@ st.dataframe(df.head())
 # Footer
 st.caption("Personal Expense Tracker | Built using Python, Pandas and Streamlit")
 st.divider()
+
+
