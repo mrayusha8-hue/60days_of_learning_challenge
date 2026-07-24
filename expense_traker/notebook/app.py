@@ -21,6 +21,9 @@ st.markdown("This dashboard helps analyze expenses through interactive visualiza
 
 # Load Data
 df = pd.read_csv("cleaned_expense.csv")
+#Creating month column
+df["Date"] = pd.to_datetime(df["Date"])
+df["Month"] = df["Date"].dt.month_name()
 st.success("Data loaded successfully")
 
 st.divider()
@@ -72,21 +75,36 @@ with col5:
 )
 st.divider()
 
+
 #Monthly Expense Section
 st.header("📈 Monthly Expense Trend")
-st.info(" Monthly expense trend chart will be displayed here.")
 
+# Group by month and calculate total expense
+monthly_expense = df.groupby("Month")["Amount"].sum()
+
+#Create plot
+fig, ax = plt.subplots(figsize=(7,5))
+ax.bar(monthly_expense.index, monthly_expense.values, color="blue" ,)    #error encountered as month is not numeric value
+ax.set_title("Monthly Expenses")
+ax.set_xlabel("Month")
+ax.set_ylabel("Amount(₹)")
+plt.xticks(rotation=45) 
+ax.grid(True, axis="y", linestyle="--", alpha=0.7)  
+plt.tight_layout()
+
+#Show plot
+st.pyplot(fig)
 st.divider()
 
 #Categort wise Expense
 st.header("📂 Category-wise Expenses")
-st.info(" This section will display category-wise spending analysis.")
+
 
 st.divider()
 
 # Pie Chart Section
 st.header("🥧 Expense Distribution")
-st.info(" Expense distribution by category will be displayed here.")
+
 
 #Dataset Preview
 st.divider()
